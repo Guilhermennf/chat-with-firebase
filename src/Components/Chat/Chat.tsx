@@ -13,7 +13,7 @@ export default function Chat() {
     } = useChat();
 
     return (
-        <div className="max-w-2xl w-full flex flex-col h-full p-3">
+        <div className="max-w-2xl w-full flex flex-col h-[90vh] p-3">
             <div
                 key={user?.uid}
                 className="flex items-center gap-2 justify-between"
@@ -54,7 +54,7 @@ export default function Chat() {
                                     : "bg-white"
                             }`}
                         >
-                            <div className="flex flex-col">
+                            <div className="flex flex-col max-w-[400px]">
                                 <div className="flex items-center mb-2">
                                     <img
                                         className="w-10 h-10 rounded-full"
@@ -65,7 +65,7 @@ export default function Chat() {
                                         {msg.data.displayName.split(" ")[0]}
                                     </span>
                                 </div>
-                                <div>{msg.data.text}</div>
+                                <div className="break-all">{msg.data.text}</div>
                             </div>
                         </div>
                     </div>
