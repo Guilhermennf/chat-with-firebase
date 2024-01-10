@@ -13,7 +13,7 @@ export default function Chat() {
     } = useChat();
 
     return (
-        <div className="max-w-2xl w-full flex flex-col h-[90vh] p-3">
+        <div className="max-w-2xl w-full flex flex-col h-[95vh] p-3">
             <div
                 key={user?.uid}
                 className="flex items-center gap-2 justify-between"
