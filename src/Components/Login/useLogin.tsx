@@ -51,20 +51,18 @@ export default function useLogin() {
     }
 
     async function handleCreateAccount() {
-        // Verifique se o e-mail é válido antes de prosseguir
         if (!validateEmail(email)) {
             setIsValidEmail(false);
             setErrorMessage("Please enter a valid email.");
 
             setTimeout(() => {
                 setErrorMessage("");
-                setIsValidEmail(true); // Defina novamente como true para permitir nova tentativa
+                setIsValidEmail(true);
             }, 5000);
 
             return;
         }
 
-        // Verifique se a senha tem mais de 5 caracteres
         if (password.length <= 5) {
             setErrorMessage("Password must be at least 6 characters long.");
 
