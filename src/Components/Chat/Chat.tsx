@@ -21,7 +21,11 @@ export default function Chat() {
                 <>
                     <img
                         className="w-10 h-10 rounded-full"
-                        src={user?.photoURL ?? ""}
+                        src={
+                            user?.photoURL
+                                ? user?.photoURL
+                                : "https://static.vecteezy.com/system/resources/previews/022/123/337/original/user-icon-profile-icon-account-icon-login-sign-line-vector.jpg"
+                        }
                         alt={`Profile of ${user?.displayName}`}
                     />
                     <div className="text-white mr-auto">
