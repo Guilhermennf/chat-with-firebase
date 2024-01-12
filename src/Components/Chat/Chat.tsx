@@ -29,7 +29,7 @@ export default function Chat() {
                         alt={`Profile of ${user?.displayName}`}
                     />
                     <div className="text-white mr-auto">
-                        {user?.displayName}
+                        {user?.displayName ? user?.displayName : "User"}
                     </div>
                 </>
 
@@ -62,11 +62,16 @@ export default function Chat() {
                                 <div className="flex items-center mb-2">
                                     <img
                                         className="w-10 h-10 rounded-full"
-                                        src={msg.data.photoURL}
+                                        src={
+                                            msg.data.photoURL
+                                                ? msg.data.photoURL
+                                                : "https://static.vecteezy.com/system/resources/previews/022/123/337/original/user-icon-profile-icon-account-icon-login-sign-line-vector.jpg"
+                                        }
                                         alt={`Profile of ${user?.displayName}`}
                                     />
                                     <span className="ml-2">
-                                        {msg.data.displayName.split(" ")[0]}
+                                        {msg.data.displayName?.split(" ")[0] ??
+                                            "User"}
                                     </span>
                                 </div>
                                 <div className="break-all">{msg.data.text}</div>
